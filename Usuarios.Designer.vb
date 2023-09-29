@@ -56,6 +56,7 @@ Partial Class Usuarios
         Me.Panel9 = New System.Windows.Forms.Panel()
         Me.picAgregar = New System.Windows.Forms.PictureBox()
         Me.dataListado = New System.Windows.Forms.DataGridView()
+        Me.lblIdUsuario = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.MenuStrip2.SuspendLayout()
@@ -75,7 +76,7 @@ Partial Class Usuarios
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1026, 76)
+        Me.Panel1.Size = New System.Drawing.Size(1121, 76)
         Me.Panel1.TabIndex = 0
         '
         'Button1
@@ -85,7 +86,7 @@ Partial Class Usuarios
         Me.Button1.FlatAppearance.BorderSize = 0
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(988, 3)
+        Me.Button1.Location = New System.Drawing.Point(1082, 3)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(35, 35)
         Me.Button1.TabIndex = 3
@@ -110,7 +111,7 @@ Partial Class Usuarios
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel3.Location = New System.Drawing.Point(0, 76)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(1026, 75)
+        Me.Panel3.Size = New System.Drawing.Size(1121, 75)
         Me.Panel3.TabIndex = 1
         '
         'MenuStrip2
@@ -144,6 +145,7 @@ Partial Class Usuarios
         '
         'panelRegistro
         '
+        Me.panelRegistro.Controls.Add(Me.lblIdUsuario)
         Me.panelRegistro.Controls.Add(Me.FlowLayoutPanel1)
         Me.panelRegistro.Controls.Add(Me.Panel8)
         Me.panelRegistro.Controls.Add(Me.Panel7)
@@ -155,9 +157,9 @@ Partial Class Usuarios
         Me.panelRegistro.Controls.Add(Me.Panel6)
         Me.panelRegistro.Controls.Add(Me.txtUsuario)
         Me.panelRegistro.Controls.Add(Me.Label2)
-        Me.panelRegistro.Location = New System.Drawing.Point(12, 178)
+        Me.panelRegistro.Location = New System.Drawing.Point(0, 201)
         Me.panelRegistro.Name = "panelRegistro"
-        Me.panelRegistro.Size = New System.Drawing.Size(816, 327)
+        Me.panelRegistro.Size = New System.Drawing.Size(963, 327)
         Me.panelRegistro.TabIndex = 3
         '
         'FlowLayoutPanel1
@@ -167,7 +169,7 @@ Partial Class Usuarios
         Me.FlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.FlowLayoutPanel1.Location = New System.Drawing.Point(0, 249)
         Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(816, 78)
+        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(963, 78)
         Me.FlowLayoutPanel1.TabIndex = 19
         '
         'btnGuardar
@@ -210,9 +212,9 @@ Partial Class Usuarios
         Me.Panel8.Controls.Add(Me.CheckBox2)
         Me.Panel8.Controls.Add(Me.CheckBox1)
         Me.Panel8.Controls.Add(Me.Label5)
-        Me.Panel8.Location = New System.Drawing.Point(513, 11)
+        Me.Panel8.Location = New System.Drawing.Point(573, 3)
         Me.Panel8.Name = "Panel8"
-        Me.Panel8.Size = New System.Drawing.Size(379, 259)
+        Me.Panel8.Size = New System.Drawing.Size(376, 259)
         Me.Panel8.TabIndex = 18
         '
         'CheckBox9
@@ -414,9 +416,9 @@ Partial Class Usuarios
         '
         Me.Panel9.Controls.Add(Me.picAgregar)
         Me.Panel9.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel9.Location = New System.Drawing.Point(868, 151)
+        Me.Panel9.Location = New System.Drawing.Point(963, 151)
         Me.Panel9.Name = "Panel9"
-        Me.Panel9.Size = New System.Drawing.Size(158, 431)
+        Me.Panel9.Size = New System.Drawing.Size(158, 457)
         Me.Panel9.TabIndex = 4
         '
         'picAgregar
@@ -443,15 +445,24 @@ Partial Class Usuarios
         Me.dataListado.RowHeadersWidth = 51
         Me.dataListado.RowTemplate.Height = 24
         Me.dataListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dataListado.Size = New System.Drawing.Size(868, 431)
+        Me.dataListado.Size = New System.Drawing.Size(963, 457)
         Me.dataListado.TabIndex = 2
+        '
+        'lblIdUsuario
+        '
+        Me.lblIdUsuario.AutoSize = True
+        Me.lblIdUsuario.Location = New System.Drawing.Point(500, 25)
+        Me.lblIdUsuario.Name = "lblIdUsuario"
+        Me.lblIdUsuario.Size = New System.Drawing.Size(48, 16)
+        Me.lblIdUsuario.TabIndex = 20
+        Me.lblIdUsuario.Text = "Label6"
         '
         'Usuarios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FloralWhite
-        Me.ClientSize = New System.Drawing.Size(1026, 582)
+        Me.ClientSize = New System.Drawing.Size(1121, 608)
         Me.Controls.Add(Me.panelRegistro)
         Me.Controls.Add(Me.dataListado)
         Me.Controls.Add(Me.Panel9)
@@ -512,4 +523,5 @@ Partial Class Usuarios
     Friend WithEvents btnGuardar As Button
     Friend WithEvents btnGuardarCambios As Button
     Friend WithEvents dataListado As DataGridView
+    Friend WithEvents lblIdUsuario As Label
 End Class

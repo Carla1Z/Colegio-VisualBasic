@@ -47,4 +47,40 @@ Public Class Usuarios
         End Try
     End Sub
 
+    Private Sub dataListado_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dataListado.CellContentClick
+
+    End Sub
+
+    Private Sub dataListado_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dataListado.CellDoubleClick
+        Try
+            panelRegistro.Visible = True
+            btnGuardar.Visible = False
+            btnGuardarCambios.Visible = True
+            txtNombres.Text = dataListado.SelectedCells.Item(1).Value
+            txtUsuario.Text = dataListado.SelectedCells.Item(2).Value
+            txtPassword.Text = dataListado.SelectedCells.Item(3).Value
+            lblIdUsuario.Text = dataListado.SelectedCells.Item(0).Value
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub btnGuardarCambios_Click(sender As Object, e As EventArgs) Handles btnGuardarCambios.Click
+        Try
+            Dim cmd As New SqlCommand
+            abrir()
+            cmd = New SqlCommand("editar_usuario", conexion)
+            cmd.CommandType = 4
+            cmd.Parameters.AddWithValue("@IdUsuario", lblIdUsuario.Text)
+            cmd.Parameters.AddWithValue("@Nombres", txtNombres.Text)
+            cmd.Parameters.AddWithValue("@Login", txtUsuario.Text)
+            cmd.Parameters.AddWithValue("@Password", txtPassword.Text)
+            cmd.ExecuteNonQuery()
+            cerrar()
+            Mostrar()
+            panelRegistro.Visible = False
+        Catch ex As Exception : MsgBox(ex.Message)
+
+        End Try
+    End Sub
 End Class
