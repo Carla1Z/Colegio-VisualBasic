@@ -56,10 +56,10 @@ Public Class Usuarios
             panelRegistro.Visible = True
             btnGuardar.Visible = False
             btnGuardarCambios.Visible = True
-            txtNombres.Text = dataListado.SelectedCells.Item(1).Value
-            txtUsuario.Text = dataListado.SelectedCells.Item(2).Value
-            txtPassword.Text = dataListado.SelectedCells.Item(3).Value
-            lblIdUsuario.Text = dataListado.SelectedCells.Item(0).Value
+            txtNombres.Text = dataListado.SelectedCells.Item(2).Value
+            txtUsuario.Text = dataListado.SelectedCells.Item(3).Value
+            txtPassword.Text = dataListado.SelectedCells.Item(4).Value
+            lblIdUsuario.Text = dataListado.SelectedCells.Item(1).Value
         Catch ex As Exception
 
         End Try
@@ -82,5 +82,28 @@ Public Class Usuarios
         Catch ex As Exception : MsgBox(ex.Message)
 
         End Try
+    End Sub
+
+    Private Sub dataListado_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dataListado.CellClick
+        If e.ColumnIndex = Me.dataListado.Columns.Item("Eli").Index Then
+            Dim result As DialogResult
+            result = MessageBox.Show("¿Realmente desea eliminar este Usuario?", "Eliminando registros", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
+            If result = DialogResult.OK Then
+                Try
+                    Dim cmd As New SqlCommand
+                    abrir()
+                    cmd = New SqlCommand("eliminar_usuario", conexion)
+                    cmd.CommandType = 4
+                    cmd.Parameters.AddWithValue("@IdUsuario", dataListado.SelectedCells.Item(1).Value)
+                    cmd.ExecuteNonQuery()
+                    cerrar()
+                    Mostrar()
+                Catch ex As Exception : MsgBox(ex.Message)
+
+                End Try
+            Else
+                MessageBox.Show("Cancelando eliminacion de registros", "Eliminando registros", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End If
+        End If
     End Sub
 End Class

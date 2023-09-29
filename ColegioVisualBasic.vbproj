@@ -139,5 +139,8 @@
   <ItemGroup>
     <None Include="Resources\agregar-boton.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\basura.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
