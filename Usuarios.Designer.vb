@@ -27,8 +27,10 @@ Partial Class Usuarios
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.MenuStrip2 = New System.Windows.Forms.MenuStrip()
+        Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.txtBuscador = New System.Windows.Forms.TextBox()
         Me.panelRegistro = New System.Windows.Forms.Panel()
+        Me.lblIdUsuario = New System.Windows.Forms.Label()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.btnGuardarCambios = New System.Windows.Forms.Button()
@@ -53,12 +55,10 @@ Partial Class Usuarios
         Me.txtUsuario = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel9 = New System.Windows.Forms.Panel()
-        Me.dataListado = New System.Windows.Forms.DataGridView()
-        Me.lblIdUsuario = New System.Windows.Forms.Label()
-        Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.Eli = New System.Windows.Forms.DataGridViewImageColumn()
         Me.picAgregar = New System.Windows.Forms.PictureBox()
-        Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.dataListado = New System.Windows.Forms.DataGridView()
+        Me.Eli = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.MenuStrip2.SuspendLayout()
@@ -66,8 +66,8 @@ Partial Class Usuarios
         Me.FlowLayoutPanel1.SuspendLayout()
         Me.Panel8.SuspendLayout()
         Me.Panel9.SuspendLayout()
-        CType(Me.dataListado, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picAgregar, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dataListado, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -124,9 +124,18 @@ Partial Class Usuarios
         Me.MenuStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem2})
         Me.MenuStrip2.Location = New System.Drawing.Point(26, 23)
         Me.MenuStrip2.Name = "MenuStrip2"
-        Me.MenuStrip2.Size = New System.Drawing.Size(44, 30)
+        Me.MenuStrip2.Size = New System.Drawing.Size(42, 28)
         Me.MenuStrip2.TabIndex = 2
         Me.MenuStrip2.Text = "MenuStrip2"
+        '
+        'ToolStripMenuItem2
+        '
+        Me.ToolStripMenuItem2.BackColor = System.Drawing.Color.Transparent
+        Me.ToolStripMenuItem2.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.ToolStripMenuItem2.ForeColor = System.Drawing.Color.White
+        Me.ToolStripMenuItem2.Image = Global.ColegioVisualBasic.My.Resources.Resources.lupa
+        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(34, 24)
         '
         'txtBuscador
         '
@@ -154,6 +163,15 @@ Partial Class Usuarios
         Me.panelRegistro.Name = "panelRegistro"
         Me.panelRegistro.Size = New System.Drawing.Size(963, 327)
         Me.panelRegistro.TabIndex = 3
+        '
+        'lblIdUsuario
+        '
+        Me.lblIdUsuario.AutoSize = True
+        Me.lblIdUsuario.Location = New System.Drawing.Point(500, 25)
+        Me.lblIdUsuario.Name = "lblIdUsuario"
+        Me.lblIdUsuario.Size = New System.Drawing.Size(48, 16)
+        Me.lblIdUsuario.TabIndex = 20
+        Me.lblIdUsuario.Text = "Label6"
         '
         'FlowLayoutPanel1
         '
@@ -414,6 +432,16 @@ Partial Class Usuarios
         Me.Panel9.Size = New System.Drawing.Size(158, 457)
         Me.Panel9.TabIndex = 4
         '
+        'picAgregar
+        '
+        Me.picAgregar.Image = Global.ColegioVisualBasic.My.Resources.Resources.agregar_boton
+        Me.picAgregar.Location = New System.Drawing.Point(0, 65)
+        Me.picAgregar.Name = "picAgregar"
+        Me.picAgregar.Size = New System.Drawing.Size(164, 147)
+        Me.picAgregar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.picAgregar.TabIndex = 0
+        Me.picAgregar.TabStop = False
+        '
         'dataListado
         '
         Me.dataListado.AllowUserToAddRows = False
@@ -433,24 +461,6 @@ Partial Class Usuarios
         Me.dataListado.Size = New System.Drawing.Size(963, 457)
         Me.dataListado.TabIndex = 2
         '
-        'lblIdUsuario
-        '
-        Me.lblIdUsuario.AutoSize = True
-        Me.lblIdUsuario.Location = New System.Drawing.Point(500, 25)
-        Me.lblIdUsuario.Name = "lblIdUsuario"
-        Me.lblIdUsuario.Size = New System.Drawing.Size(48, 16)
-        Me.lblIdUsuario.TabIndex = 20
-        Me.lblIdUsuario.Text = "Label6"
-        '
-        'DataGridViewImageColumn1
-        '
-        Me.DataGridViewImageColumn1.HeaderText = ""
-        Me.DataGridViewImageColumn1.Image = Global.ColegioVisualBasic.My.Resources.Resources.basura
-        Me.DataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
-        Me.DataGridViewImageColumn1.MinimumWidth = 6
-        Me.DataGridViewImageColumn1.Name = "DataGridViewImageColumn1"
-        Me.DataGridViewImageColumn1.Width = 125
-        '
         'Eli
         '
         Me.Eli.HeaderText = ""
@@ -460,24 +470,14 @@ Partial Class Usuarios
         Me.Eli.Name = "Eli"
         Me.Eli.Width = 125
         '
-        'picAgregar
+        'DataGridViewImageColumn1
         '
-        Me.picAgregar.Image = Global.ColegioVisualBasic.My.Resources.Resources.agregar_boton
-        Me.picAgregar.Location = New System.Drawing.Point(0, 65)
-        Me.picAgregar.Name = "picAgregar"
-        Me.picAgregar.Size = New System.Drawing.Size(164, 147)
-        Me.picAgregar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.picAgregar.TabIndex = 0
-        Me.picAgregar.TabStop = False
-        '
-        'ToolStripMenuItem2
-        '
-        Me.ToolStripMenuItem2.BackColor = System.Drawing.Color.Transparent
-        Me.ToolStripMenuItem2.Font = New System.Drawing.Font("Segoe UI", 12.0!)
-        Me.ToolStripMenuItem2.ForeColor = System.Drawing.Color.White
-        Me.ToolStripMenuItem2.Image = Global.ColegioVisualBasic.My.Resources.Resources.lupa
-        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(34, 26)
+        Me.DataGridViewImageColumn1.HeaderText = ""
+        Me.DataGridViewImageColumn1.Image = Global.ColegioVisualBasic.My.Resources.Resources.basura
+        Me.DataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
+        Me.DataGridViewImageColumn1.MinimumWidth = 6
+        Me.DataGridViewImageColumn1.Name = "DataGridViewImageColumn1"
+        Me.DataGridViewImageColumn1.Width = 125
         '
         'Usuarios
         '
@@ -505,8 +505,8 @@ Partial Class Usuarios
         Me.Panel8.ResumeLayout(False)
         Me.Panel8.PerformLayout()
         Me.Panel9.ResumeLayout(False)
-        CType(Me.dataListado, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picAgregar, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dataListado, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

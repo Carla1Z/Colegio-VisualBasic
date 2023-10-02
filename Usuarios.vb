@@ -106,4 +106,24 @@ Public Class Usuarios
             End If
         End If
     End Sub
+
+    Sub buscar()
+        Dim dt As New DataTable
+        Dim da As SqlDataAdapter
+        Try
+            abrir()
+            da = New SqlDataAdapter("buscar_usuarios", conexion)
+            da.SelectCommand.CommandType = 4
+            da.SelectCommand.Parameters.AddWithValue("@letra", txtBuscador.Text)
+            da.Fill(dt)
+            dataListado.DataSource = dt
+            cerrar()
+        Catch ex As Exception : MessageBox.Show(ex.Message)
+
+        End Try
+    End Sub
+
+    Private Sub txtBuscador_TextChanged(sender As Object, e As EventArgs) Handles txtBuscador.TextChanged
+        buscar()
+    End Sub
 End Class
